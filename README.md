@@ -15,7 +15,7 @@ https://datadryad.org/dataset/doi:10.7272/Q6833Q63
 
 ## Public Swagger UI (the API is tested here)
 
-`<PASTE YOUR RENDER URL>/docs` for example https://your-service.onrender.com/docs
+https://birthweight-api.onrender.com/docs
 
 The service runs on the Render free plan and sleeps after 15 minutes without traffic, so the first request can take up to a minute.
 
@@ -41,7 +41,7 @@ You need the Flutter SDK (3.22 or newer) and an Android emulator, an iOS simulat
    ```
    flutter pub get
    ```
-4. Open `lib/main.dart` and set the default `API_BASE_URL` to your Render URL (no trailing slash), or pass it when you run.
+4. The app already points to the deployed API (`https://birthweight-api.onrender.com`, set as the default `API_BASE_URL` in `lib/main.dart`). You can pass a different address with `--dart-define` when you run, see step 6.
 5. Start an emulator (or plug in a phone with USB debugging) and check it shows up:
    ```
    flutter devices
@@ -120,11 +120,11 @@ On the Render free plan the retrained model is lost when the service restarts or
 2. Render dashboard, New, Web Service, connect the repo.
 3. Settings:
    - Root Directory: `summative/API`
-   - Build Command: `pip install -r requirements.txt`
-   - Start Command: `uvicorn prediction:app --host 0.0.0.0 --port $PORT`
+   - Build Command: `uv sync --locked`
+   - Start Command: `uv run uvicorn prediction:app --host 0.0.0.0 --port $PORT`
    - Instance type: Free
    - Environment variable: `PYTHON_VERSION` = `3.12.8`
-4. After the deploy, open `https://<your-service>.onrender.com/docs`.
+4. After the deploy, open https://birthweight-api.onrender.com/docs
 
 To refresh `requirements.txt` after changing dependencies:
 ```

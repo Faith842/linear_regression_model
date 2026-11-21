@@ -6,12 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 /// Base URL of the deployed API (no trailing slash).
-/// Change the default below to your Render URL, or override it at run time:
+/// The default below is the deployed Render URL. Override it at run time to use another API:
 ///   flutter run --dart-define=API_BASE_URL=http://10.0.2.2:8000
 /// (10.0.2.2 is how the Android emulator reaches the computer's localhost.)
 const String kApiBaseUrl = String.fromEnvironment(
   'API_BASE_URL',
-  defaultValue: 'https://YOUR-SERVICE.onrender.com',
+  defaultValue: 'https://birthweight-api.onrender.com',
 );
 
 void main() => runApp(const BirthWeightApp());

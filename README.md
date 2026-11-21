@@ -21,7 +21,7 @@ The service runs on the Render free plan and sleeps after 15 minutes without tra
 
 ## YouTube video demo
 
-`<PASTE YOUR YOUTUBE LINK>`
+`https://youtu.be/k5fTannZ-6U`
 
 ## Run the mobile app
 
